@@ -20,3 +20,5 @@ bundles/
 vendor/pkg/
 pyenv
 Vagrantfile
+.local/sc-db/*
+Sec
