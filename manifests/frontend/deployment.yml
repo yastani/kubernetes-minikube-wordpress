@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wordpress
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+      containers:
+      - name: wordpress
+        # [TODO] なぜかalpineだと動かない、backendの機能しかないから？
+        image: wordpress:php7.3-apache
+        env:
+        - name: WORDPRESS_DB_HOST
+          # [TODO] 直指定しないように修正する
+          value: 172.17.0.2:3306
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+        ports:
+        - containerPort: 80
+          name: wordpress
