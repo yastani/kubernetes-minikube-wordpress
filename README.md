@@ -1,20 +1,14 @@
-# kubernetes-lemp-example
-LEMP構成でKubernetesの開発環境を構築する
-
-## LEMPとは
-
-Linux, (E)nginx, MySQL, (PHP|Python|Perl)構成とのこと。
-
-https://www.linode.com/docs/web-servers/lemp/
+# kubernetes-minikube-wordpress
+Minikubeを使用してローカル環境にWordpress+MySQLを構築する
 
 ## 開発環境構築手順
 
-### Docker for MacとKubernetes関連ツール
+### 関連ツールのインストール
 ```bash
 $ brew cask install minikube docker virtualbox kubernetes-cli kubectx
 ```
 
-### ローカルにKubernetes環境を構築する
+### MinikubeをVirtualboxで起動する
 ※minikube v0.26より `bootstrapper` のデフォルトが `localkube` から `kubeadm` に変更になった
 ```bash
 minikube start \
