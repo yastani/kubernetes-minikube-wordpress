@@ -105,10 +105,6 @@ $ minikube service wordpress
 🎉  Opening kubernetes service default/wordpress in default browser...
 ```
 
-## .dockerignoreについて
-
-https://qiita.com/munisystem/items/b0f08b28e8cc26132212
-
 ## 参考
 
 https://github.com/takaishi/hello2018/tree/master/k8s_hands_on
