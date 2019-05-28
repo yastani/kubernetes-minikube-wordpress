@@ -78,9 +78,9 @@ mysql> show databases;
 
 ### Wordpress Containerを作成
 ```bash
-$ kubectl apply -f manifests/frontend/service.yml
+$ kubectl apply -f frontend/manifests/service.yml
 service/wordpress configured
-$ kubectl apply -f manifests/frontend/deployment.yml && kubectl rollout status -f manifests/frontend/deployment.yml
+$ kubectl apply -f frontend/manifests/deployment.yml && kubectl rollout status -f frontend/manifests/deployment.yml
 deployment.apps/wordpress created
 Waiting for deployment "wordpress" rollout to finish: 1 out of 3 new replicas have been updated...
 Waiting for deployment "wordpress" rollout to finish: 1 of 3 updated replicas are available...
